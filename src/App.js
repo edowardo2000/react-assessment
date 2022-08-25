@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { useState, Fragment } from 'react';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import AddPage from './pages/AddPage';
+import ViewPage from './pages/ViewPage';
+import axios from "axios";
 
 function App() {
+
+  const [contacts, setContacts] = useState([]);
+
+  const baseURL = "https://6300660834344b6431080190.mockapi.io/api/v1/phoneBook";
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setContacts(response.data);
+    });
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ViewPage setContacts={setContacts} contacts={contacts} />} />
+          <Route path="add" element={<AddPage setContacts={setContacts} contacts={contacts} />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <ViewPage />
+      <AddPage /> */}
     </div>
   );
-}
+};
 
 export default App;

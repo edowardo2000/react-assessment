@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "fullName": "Edo Tan",
+        "phoneNumber": "123-456-7890"
+    },
+    {
+        "id": 2,
+        "fullName": "Riko Halim",
+        "phoneNumber": "111-222-3333"
+    },
+    {
+        "id": 3,
+        "fullName": "Elsi Lie",
+        "phoneNumber": "222-555-1455"
+    },
+    {
+        "id": 4,
+        "fullName": "Jeremy Lim",
+        "phoneNumber": "134-551-1121"
+    },
+    {
+        "id": 5,
+        "fullName": "Ryan Lim",
+        "phoneNumber": "124-555-1234"
+    }
+]
